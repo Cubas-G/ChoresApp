@@ -3,7 +3,7 @@ import React from 'react'
 
 const Profiles = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Profiles</Text>
     </View>
   )
@@ -11,4 +11,10 @@ const Profiles = () => {
 
 export default Profiles
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container:{
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center'
+    }
+})
