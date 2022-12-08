@@ -9,16 +9,48 @@ import Add from '../screens/Add';
 
 const Stack = createNativeStackNavigator();
 const Navegation = () => {
-  return (
-    <NavigationContainer>
-    <Stack.Navigator initialRouteName="Add">
-       <Stack.Screen name="Profiles" component={Profiles} />
-       <Stack.Screen name="Home" component={Home} options={{ title: 'Inicio' }} />
-       <Stack.Screen name="Edit" component={Edit} options={{ title: 'Editar Tareas' }}/>
-       <Stack.Screen name="Add" component={Add}options={{ title: 'Agregar Usuarios' }} />
-     </Stack.Navigator>
-   </NavigationContainer>
-  )
+    return (
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName="Edit">
+                <Stack.Screen name="Profiles" component={Profiles} options={{
+                    title: 'Usuarios', headerStyle: {
+                        backgroundColor: '#f4511e',
+                    },
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                    }
+                }} />
+                <Stack.Screen name="Home" component={Home} options={{
+                    title: 'Inicio', headerStyle: {
+                        backgroundColor: '#f4511e',
+                    },
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                    }
+                }} />
+                <Stack.Screen name="Edit" component={Edit} options={{
+                    title: 'Editar Tareas', headerStyle: {
+                        backgroundColor: '#f4511e',
+                    },
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                    }
+                }} />
+                <Stack.Screen name="Add" component={Add} options={{
+                    title: 'Agregar Usuarios', headerStyle: {
+                        backgroundColor: '#f4511e',
+                    },
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                    }
+                }} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
 }
 
 export default Navegation
