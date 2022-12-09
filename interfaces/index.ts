@@ -11,5 +11,4 @@ interface Metadata {
 }
 export interface ListCategoriesResponse {
     data: [Category] | []
-    pagination: Metadata
 }

@@ -4,21 +4,13 @@ import React, { useState, useEffect } from "react";
 
 import { HttpClient } from "../services/http.service";
 import { ListCategoriesResponse } from "../interfaces/index";
-const COLORS = {
-  primary: "#E13E3E",
-  secondary: "#FFFFFF",
-  tertiary: "#D5AAB3",
-  bg: "transparent",
-};
+
 const client = new HttpClient();
 
 const Profiles = () => {
   const [categories, setCategories] = useState<ListCategoriesResponse>({
-    data: [],
-    metadata: {},
+    data: []
   });
-
-  const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(1);
 
   const getPopularCategories = async () => {
     const response = await client.get("categories");
@@ -32,17 +24,13 @@ const Profiles = () => {
   }, []);
   return (
     <ScrollView
-      horizontal
+      
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.container}
     >
       {categories.data.map((category, index) => (
-
-        <View
-        >
-          <Text
-
-          >
+        <View style={styles.containerView} key={index}>
+          <Text style={styles.text}>
             {category.name},{category.description},
           </Text>
         </View>
@@ -55,18 +43,24 @@ export default Profiles
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
-    marginLeft: 9,
-    marginVertical: 15,
+    flex: 1,
+   backgroundColor: '#0b3054',
   },
-  categoryBtn: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    height: 40,
-    width: 100,
-    marginRight: 10,
+  containerView:{
+    width: '95%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 8,
     borderRadius: 10,
-    paddingTop: 3,
+    marginLeft: 10,
+    borderWidth: 3,
+    borderColor: '#fffff',
+    marginTop: 10,
   },
+  text: {
+    fontSize: 24,
+    color: '#ffffff'
+},
 })
